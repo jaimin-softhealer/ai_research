@@ -1,0 +1,35 @@
+review:
+  focus:
+    - bugs
+    - security
+    - performance
+    - odoo-orm
+    - access-rights
+    - compute-fields
+  priority: correctness
+  style: minimal
+  comments: concise
+paths:
+  include:
+    - "addons/**"
+    - "custom_addons/**"
+    - "odoo/addons/**"
+    - "**/*.py"
+    - "**/*.xml"
+    - "**/*.js"
+    - "**/*.csv"
+  exclude:
+    - "**/dist/**"
+    - "**/build/**"
+    - "**/migrations/**"
+    - "**/.venv/**"
+    - "**/node_modules/**"
+    - "**/__pycache__/**"
+    - "**/*.po"
+    - "**/*.pot"
+rules:
+  odoo:
+    ensure_one: true
+    onchange_no_write: true
+    depends_completeness: true
+    sudo_review: true
