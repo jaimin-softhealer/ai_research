@@ -12,7 +12,7 @@ class ResPartner(models.Model):
     lang_risk_label = fields.Char(
         string="Language Risk Label",
         compute="_compute_lang_risk_label",
-        store=True,
+        store=False,
     )
 
     @api.depends("lang")
